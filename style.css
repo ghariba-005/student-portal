@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    min-height: 100vh;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/* sidebar */
+.sidebar {
+    padding: 24px;
+}
+.sidebar .logo {
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+.sidebar-nav a {
+    background: #d4d2d2;
+    padding: 12px 16px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+}
+.sidebar-nav a svg * {
+    stroke: black;
+}
+.sidebar-nav a.active svg * {
+    stroke: #fff;
+
+}
+.sidebar-nav a.active {
+    background: #000;
+    color: #fff;
+}
+
+.sidebar-nav a:hover {
+    background: #a9a5a5;
+}
+
+/* main content */
+
+.main-content {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+/* topbar */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: bold;
+}
+
+/* stats */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s;
+}
+.card img {
+    width: 100%;
+    /* height: 60px; */
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.card .button {
+    margin-top: 10px;
+    background: #ddd;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 12px;
+
+}
+.card:hover {
+    transform: translateY(-4px);
+}
+.card .button:hover {
+    background: rgb(100, 97, 97);
+    color: #fff;
+    transform: translateY(8px);
+    transition: ease-in-out 0.6s;
+}
+/* courses */
+
+.courses {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* breadcrumbs */
+
+.breadcrumb {
+    color: blue;
+    font-weight: bold;
+}
+
+/* responsive */
+
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+    .main-content, .sidebar {
+        padding: 20px;
+    }
+    .stats, .courses {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar {
+        display: none;
+    }
+    .card img {
+        height: 220px;
+    }
+    .sidebar {
+        width: 100%;
+    }
+    .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        /* overflow-x: auto;
+        overflow-y: hidden;
+        width: 100%; */
+    }
+
+    /* .sidebar-nav > * {
+        flex-shrink: 0;
+    } */
+
+    
+}
+/* tables */
+
+table, td, th {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    
+}
+td, th {
+    padding: 10px 14px;
+    text-align: left;
+}
+th {
+    color: #fff;
+    background: #3d3d3d;
+}
+
+/* schedules */
+
+.schedule {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.schedule table {
+    width: 100%;
+    min-width: 800px;
+}
+
+/* course card */
+
+.course-html {
+    border: 1px solid black;
+    padding: 22px;
+    border-radius: 10px;
+}
+.course-html img {
+    width:100%
+    
+}
+.course-html p {
+    padding-top: 20px;
+}
+.course-html em {
+    font-weight: bold;
+}
+.course-html img:hover {
+    transform: translateY(-4px);
+    transition: ease-in 0.6s;
+    box-shadow: 10px 5px 5px black;
+}
+.course-html p:hover {
+    color: #517c95;
+    transform: translateY(-4px);
+    transition: ease-in 0.4s;
+
+}
+.btn {
+    padding: 12px;
+    margin-top: 10px;
+    background: #3d3d3d;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+}
+.btn:hover {
+    background: #000;
+}
+
+/* profile */
+
+.card-left {
+    /* background: red; */
+    /* height: 100px; */
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+.card-right {
+    /* background: blue; */
+    /* height: 100px; */
+    flex: 2;
+}
+.profile-card {
+    display: flex;
+    gap: 20px;
+
+}
+.profile-avatar {
+    border-radius: 50% !important; 
+    height: 120px !important;
+    width: 120px !important;
+}
+
+/* form */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+.profile-info label {
+    margin-top: 10px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+.profile-info label:first-child {
+    margin-top: 0;
+}
+
+.profile-info input, .profile-info textarea, .profile-info select {
+    border: 1px solid #767575;
+    padding: 12px 16px;
+}
+.submit {
+    background: #000;
+    margin-top: 20px;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+}
